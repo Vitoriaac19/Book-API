@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=SUSE:wght@100..800&display=swap");
+
+:root {
+  --primary-font: "Rubik", sans-serif;
+  --primary-color: #5f0a87;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--primary-font);
+}
+
+.container {
+  position: relative;
+  width: 25%;
+  height: 35%;
+  border: 1px solid hsl(0, 0%, 71%);
+  box-shadow: 1px 1px 1px hsl(0, 0%, 71%);
+  border-radius: 20px;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 12%;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 2em;
+  top: 8%;
+}
+
+.container-input {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  top: 30%;
+}
+
+.container-input input {
+  justify-content: center;
+  width: 80%;
+  height: 35px;
+  padding-left: 15px;
+  outline: none;
+  border: 1px solid hsl(0, 0%, 71%);
+}
+
+.container-button {
+  position: absolute;
+  top: 63%;
+  width: 25%;
+  height: 8%;
+}
+
+.container-button button {
+  width: 100%;
+  height: 100%;
+  font-size: 1.2em;
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  border: none;
+}
+
+.container-button button:hover {
+  background-color: hsl(287, 34%, 59%);
+  cursor: pointer;
+}
+
+.container-register {
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10%;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 10%;
+  gap: 50px;
+}
+.container-register a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.container-register a:hover {
+  color: hsl(287, 34%, 59%);
+  cursor: pointer;
+}

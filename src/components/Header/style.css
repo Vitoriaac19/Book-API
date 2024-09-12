@@ -1,0 +1,15 @@
+.header{
+    position: absolute;
+    width: 100%;
+    height: 15vh;
+    top: 0;
+    background-color: var(--primary-color);
+}
+
+.footer{
+    position: absolute;
+    width: 100%;
+    height: 3vh;
+    bottom: 0;
+    background-color: var(--primary-color);
+}
