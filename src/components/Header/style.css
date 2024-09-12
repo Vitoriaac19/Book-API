@@ -1,15 +1,66 @@
-.header{
-    position: absolute;
-    width: 100%;
-    height: 15vh;
-    top: 0;
-    background-color: var(--primary-color);
+.header {
+  position: absolute;
+  width: 100%;
+  height: 15vh;
+  top: 0;
+  background-color: var(--primary-color);
+  display: flex;
 }
 
-.footer{
+.container-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+
+  width: 30%;
+  height: 200px;
+}
+
+.container-title p {
+  top: 15%;
+  height: 50%;
+  font-size: 4em;
+  font-weight: bold;
+  color: white;
+}
+
+.container-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     width: 100%;
-    height: 3vh;
-    bottom: 0;
-    background-color: var(--primary-color);
+    height: 50px;
+    bottom: 10%;
+
+
 }
+
+.container-links ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    gap: 70px;
+}
+
+.container-links ul li{
+    text-align: center;
+    width: 10%;
+}
+
+.links{
+    font-size: 1.5em;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+

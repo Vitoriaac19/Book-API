@@ -1,13 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [action, setAction] = useState("Login");
 
-  function handleSubmit() {
+  // useEffect(() => {
+  //   const fetchJson = async () => {
+  //     const result = await fetch("src/HEP-BOOK.postman_collection.json");
+  //     const data = await result.json();
+  //     console.log(data);
+  //   };
+  //   fetchJson();
+  // }), [];
+
+  function handleSubmit(event) {
     event.preventDefault();
-    console.log("ola", username, password);
   }
 
   function handleUsername(event) {
@@ -18,14 +27,27 @@ function Login() {
     setPassword(event.target.value);
   }
 
+  function handleRegister() {
+    setAction(action === "Login" ? "Register" : "Login");
+
+  }
+
   return (
     <div className="container">
       <form className="form-login" onSubmit={handleSubmit}>
         <div className="title">
-          <h3>LOGIN</h3>
-        </div>
+          <h3>{action}</h3>
 
-        <div className="container-input">
+          <div className="container-input"></div>
+
+          {action === "Register" && (
+            <input
+              type="text"
+              placeholder="Name"
+              onChange={handleUsername}
+              required
+            />
+          )}
           <input
             type="text"
             placeholder="E-mail"
@@ -44,7 +66,9 @@ function Login() {
         </div>
         <div className="container-register">
           <a href="#">Forgot your password?</a>
-          <a href="#">Register</a>
+          <a href="#" onClick={handleRegister}>
+            Register
+          </a>
         </div>
       </form>
     </div>

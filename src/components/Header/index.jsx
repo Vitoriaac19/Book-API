@@ -6,11 +6,23 @@ function Header() {
     <>
       <header className="header">
         <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/books"></Link>Books</li>
-            <li><Link to="/login"></Link>Login</li>
-          </ul>
+          <div className="container-title">
+            <p className="title">WorldUp!</p>
+          </div>
+          
+          <div className="container-links">
+            <ul>
+              <li>
+                <Link to="/" className="links">Home</Link>
+              </li>
+              <li>
+                <Link to="/books" className="links">Books</Link>
+              </li>
+              <li>
+                <Link to="/login" className="links login">Login</Link>
+              </li>
+            </ul>
+          </div>
         </nav>
       </header>
     </>
