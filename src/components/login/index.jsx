@@ -29,7 +29,6 @@ function Login() {
 
   function handleRegister() {
     setAction(action === "Login" ? "Register" : "Login");
-
   }
 
   return (
@@ -37,9 +36,9 @@ function Login() {
       <form className="form-login" onSubmit={handleSubmit}>
         <div className="title">
           <h3>{action}</h3>
+        </div>
 
-          <div className="container-input"></div>
-
+        <div className="container-input">
           {action === "Register" && (
             <input
               type="text"
@@ -66,9 +65,15 @@ function Login() {
         </div>
         <div className="container-register">
           <a href="#">Forgot your password?</a>
-          <a href="#" onClick={handleRegister}>
-            Register
-          </a>
+          {action === "Register" ? (
+            <a href="#" onClick={handleRegister}>
+              Login
+            </a>
+          ) : (
+            <a href="#" onClick={handleRegister}>
+              Register
+            </a>
+          )}
         </div>
       </form>
     </div>
