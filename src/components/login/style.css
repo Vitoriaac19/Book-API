@@ -101,12 +101,15 @@
   height: 10%;
   gap: 50px;
 }
-.container-register a {
+.container-register button {
   text-decoration: none;
   color: var(--primary-color);
+  border: none;
+  background-color: transparent;
+  font-size: 1.1em;
 }
 
-.container-register a:hover {
+.container-register button:hover {
   color: hsl(287, 34%, 59%);
   cursor: pointer;
 }
