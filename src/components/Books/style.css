@@ -1,0 +1,15 @@
+.container-book {
+  display: flex;
+  position: relative;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 70%;
+  height: 82vh;
+  border: 1.5px solid hsl(0, 0%, 71%);
+  border-bottom: none;
+  border-top: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: white;
+}

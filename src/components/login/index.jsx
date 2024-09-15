@@ -2,25 +2,59 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 
 function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("csoares@example.com");
+  const [password, setPassword] = useState("secret");
+  const [name, setName] = useState("");
   const [action, setAction] = useState("Login");
 
-  // useEffect(() => {
-  //   const fetchJson = async () => {
-  //     const result = await fetch("src/HEP-BOOK.postman_collection.json");
-  //     const data = await result.json();
-  //     console.log(data);
-  //   };
-  //   fetchJson();
-  // }), [];
-
-  function handleSubmit(event) {
+  function handleRegisterOrLogin(event) {
     event.preventDefault();
+    const bodyRegister = {
+      email,
+      password,
+      name,
+    };
+
+    const bodyLogin = {
+      email,
+      password,
+    };
+
+    if (action === "Register") {
+      fetch("http://5.22.217.225:8081/api/v1/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bodyRegister),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          console.log("yes")
+        });
+    } else {
+      fetch("http://5.22.217.225:8081/api/v1/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bodyLogin),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          localStorage.setItem("token", result.data.token); 
+          console.log("login")
+        });
+    }
   }
 
-  function handleUsername(event) {
-    setUsername(event.target.value);
+  function handleEmail(event) {
+    setEmail(event.target.value);
+  }
+
+  function handleName(event) {
+    setName(event.target.value);
   }
 
   function handlePassword(event) {
@@ -33,7 +67,7 @@ function Login() {
 
   return (
     <div className="container">
-      <form className="form-login" onSubmit={handleSubmit}>
+      <div className="form-login">
         <div className="title">
           <h3>{action}</h3>
         </div>
@@ -43,41 +77,42 @@ function Login() {
             <input
               type="text"
               placeholder="Name"
-              onChange={handleUsername}
+              value={name}
+              onChange={handleName}
               required
             />
           )}
           <input
             type="text"
             placeholder="E-mail"
-            onChange={handleUsername}
+            value={email}
+            onChange={handleEmail}
             required
           />
           <input
             type="password"
             placeholder="Password"
+            value={password}
             onChange={handlePassword}
             required
           />
         </div>
         <div className="container-button">
-          <button>Login</button>
+          <button onClick={handleRegisterOrLogin}>Login</button>
         </div>
         <div className="container-register">
-          <a href="#">Forgot your password?</a>
+          <button>Forgot your password?</button>
           {action === "Register" ? (
-            <a href="#" onClick={handleRegister}>
-              Login
-            </a>
+            <button onClick={handleRegister}>Login</button>
           ) : (
-            <a href="#" onClick={handleRegister}>
-              Register
-            </a>
+            <button onClick={handleRegister}>Register</button>
           )}
         </div>
-      </form>
+      </div>
     </div>
   );
 }
 
 export default Login;
+
+
