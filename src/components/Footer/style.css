@@ -1,11 +1,12 @@
 .footer {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 4vh;
   bottom: 0;
   background-color: var(--primary-color);
   display: flex;
   color: white;
+  display: none;
 }
 
 .follow {

@@ -1,15 +1,57 @@
 .container-book {
   display: flex;
-  position: relative;
-  top: 15%;
+  position: absolute;
+  top:15%;
   left: 50%;
   transform: translate(-50%);
   width: 70%;
-  height: 82vh;
   border: 1.5px solid hsl(0, 0%, 71%);
   border-bottom: none;
   border-top: none;
   border-radius: 0;
   box-shadow: none;
   background-color: white;
+}
+
+.book {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 20%;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    gap: 30px;
+}
+
+.title-book{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 35%;
+    height: 60vh;
+    border: 1px solid hsl(0, 0%, 71%);
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px hsl(0, 0%, 71%);
+    align-items: center;
+    gap: 10px;
+}
+
+.book-cover{
+
+    width: 70%;
+    height: 60%;
+    object-fit: cover;
+    margin-top: 8%;
+}
+
+.description{
+    overflow: hidden;
+    white-space: wrap;
+    text-overflow: ellipsis;
+    max-width: 350px;
 }
