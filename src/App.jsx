@@ -6,25 +6,28 @@ import Layout from "./components/Layout";
 import Home from "./components/Home";
 import Books from "./components/Books";
 import AddBook from "./components/AddBook/index.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
 
 export const TokenContext = createContext();
 
 function App() {
   const [token, setToken] = useState("");
-  
+
   return (
-    <TokenContext.Provider value={{ token, setToken }}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="books" element={<Books />} />
-            <Route path="login" element={<Login />} />
-            <Route path="addbook" element={<AddBook/>} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </TokenContext.Provider>
+    <AuthProvider>
+      <TokenContext.Provider value={{ token, setToken }}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="books" element={<Books />} />
+              <Route path="login" element={<Login />} />
+              <Route path="addbook" element={<AddBook />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </TokenContext.Provider>
+    </AuthProvider>
   );
 }
 

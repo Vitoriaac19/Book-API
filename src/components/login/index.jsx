@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import "./style.css";
 import { TokenContext } from "../../App";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 
 
@@ -12,8 +13,10 @@ function Login() {
   const [action, setAction] = useState("Login");
   const {setToken} = useContext(TokenContext);
   const navigate = useNavigate();
-
-
+  const {authUser,
+    setAuthUser,
+    isLogged,
+    setIsLogged} = useAuth();
 
   function handleRegisterOrLogin(event) {
     event.preventDefault();
@@ -50,9 +53,10 @@ function Login() {
       })
         .then((response) => response.json())
         .then((result) => {
+          setIsLogged(true);
           setToken(result.data.token)
-          localStorage.setItem("token", result.data.token); 
-          navigate("/books");
+          localStorage.setItem("token", result.data.token);
+          navigate("/books")
           console.log(result.data.token)
         });
     }

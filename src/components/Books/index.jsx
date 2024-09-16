@@ -25,7 +25,7 @@ function Books() {
   function deleteBook(id) {
     fetch(`/api/v1/book/${id}`, {
       method: "DELETE",
-      headers: { Authorization: `Bearer ${token}`,
+      headers: { Authorization: `${token}`,
       "Content-Type": "application/json" },
     })
       .then((response) => {
@@ -36,10 +36,6 @@ function Books() {
       .catch((e) => {
         console.log(e);
       });
-  }
-
-  function test() {
-    console.log(token);
   }
 
   return (
@@ -59,7 +55,6 @@ function Books() {
               <p>{book.id}</p>
               <div className="button">
                 <button onClick={() => deleteBook(book.id)}>Delete</button>
-                <button onClick={test}>Test</button>
                 <button>Update</button>
               </div>
             </div>
