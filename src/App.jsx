@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Books from "./components/Books";
 import AddBook from "./components/AddBook/index.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
+import UpdateBook from "./components/UpdateBooks/index.jsx";
 
 export const TokenContext = createContext();
 
@@ -23,6 +24,7 @@ function App() {
               <Route path="books" element={<Books />} />
               <Route path="login" element={<Login />} />
               <Route path="addbook" element={<AddBook />} />
+              <Route path="updatebook/:id" element={<UpdateBook/>} />
             </Route>
           </Routes>
         </BrowserRouter>

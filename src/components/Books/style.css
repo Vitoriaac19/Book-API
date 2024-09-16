@@ -1,7 +1,7 @@
 .container-book {
   display: flex;
   position: absolute;
-  top:15%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%);
   width: 70%;
@@ -10,48 +10,79 @@
   border-top: none;
   border-radius: 0;
   box-shadow: none;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .book {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 20%;
+  margin-top: 4%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 30px;
+}
+
+.title-book {
     position: relative;
-    width: 100%;
-    height: 100%;
-    top: 20%;
-    margin-top: 4%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 20%;
+  height: 30vh;
+  border: 1px solid hsl(0, 0%, 71%);
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px hsl(0, 0%, 71%);
+  align-items: center;
+  gap: 10px;
 }
 
-.title-book{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 35%;
-    height: 60vh;
-    border: 1px solid hsl(0, 0%, 71%);
-    border-radius: 20px;
-    box-shadow: 1px 1px 1px hsl(0, 0%, 71%);
-    align-items: center;
-    gap: 10px;
+.book-cover {
+  width: 70%;
+  height: 60%;
+  object-fit: cover;
+  margin-top: 8%;
+  border-radius: 10px;
 }
 
-.book-cover{
-
-    width: 70%;
-    height: 60%;
-    object-fit: cover;
-    margin-top: 8%;
+.description {
+  overflow: hidden;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  max-width: 350px;
 }
 
-.description{
-    overflow: hidden;
-    white-space: wrap;
-    text-overflow: ellipsis;
-    max-width: 350px;
+.book h3 {
+    text-align: center;
+  font-size: 1.1rem;
+  text-overflow: ellipsis;
+}
+
+.button-books {
+  width: 80%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  bottom: 8%;
+}
+
+.button-books button {
+  width: 30%;
+  height: 100%;
+  font-size: 0.9em;
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  border: none;
+  
+}
+
+.button-books button:hover {
+  background-color: hsl(287, 34%, 59%);
+  cursor: pointer;
 }
