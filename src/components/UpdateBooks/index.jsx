@@ -106,7 +106,7 @@ function UpdateBook() {
             type="text"
             onChange={handleDescriptionToChange}
             placeholder="Description"
-            className="description"
+            className="description-book"
             value={description} 
           />
           <input

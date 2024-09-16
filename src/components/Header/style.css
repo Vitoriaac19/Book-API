@@ -54,11 +54,13 @@
   width: 10%;
 }
 
-.links {
+.links, .logout-button {
   font-size: 1.5em;
   text-decoration: none;
   color: white;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 .container-islogged {

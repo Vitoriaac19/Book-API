@@ -10,6 +10,7 @@ function AddBook() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [year, setYear] = useState("");
+  const [book_cover, setCover] = useState("");
   const { authUser, setAuthUser, isLogged, setIsLogged } = useAuth();
   const navigate = useNavigate();
 
@@ -18,6 +19,7 @@ function AddBook() {
       title,
       description,
       year,
+      book_cover,
     };
 
     fetch("/api/v1/book/", {
@@ -29,7 +31,7 @@ function AddBook() {
       body: JSON.stringify(bodyNewBook),
       redirect: "follow",
     })
-      .then((response) => response.json())
+      .then((response) => response.json(), navigate("/books"))
 
       .catch((e) => {
         console.log(e);
@@ -46,6 +48,10 @@ function AddBook() {
 
   function handleYear(event) {
     setYear(Number(event.target.value));
+  }
+
+  function handleCover(event) {
+    setCover(event.target.value);
   }
 
   return (
@@ -66,6 +72,14 @@ function AddBook() {
             placeholder="The year of publish"
             className="year"
           />
+
+          <input
+            type="url"
+            onChange={handleCover}
+            placeholder="Cover Image URL"
+            className="image"
+          />
+
           <input
             type="text"
             onChange={handleDescription}

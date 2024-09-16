@@ -47,7 +47,7 @@ function Header() {
                   </li>
 
                   <li>
-                    <button className="links" onClick={handleLogout}>
+                    <button className="logout-button" onClick={handleLogout}>
                       Logout
                     </button>
                   </li>
