@@ -2,8 +2,8 @@ import { TokenContext } from "../../App";
 import { useContext, useState } from "react";
 import "./style.css";
 import { useAuth } from "../../context/AuthContext";
-import { Link } from "react-router-dom"; 
-
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function AddBook() {
   const { token } = useContext(TokenContext);
@@ -11,6 +11,7 @@ function AddBook() {
   const [description, setDescription] = useState("");
   const [year, setYear] = useState("");
   const { authUser, setAuthUser, isLogged, setIsLogged } = useAuth();
+  const navigate = useNavigate();
 
   function addNewBook() {
     const bodyNewBook = {
@@ -69,7 +70,7 @@ function AddBook() {
             type="text"
             onChange={handleDescription}
             placeholder="Small description"
-            className="description"
+            className="description-book"
           />
 
           <div className="container-new-button">

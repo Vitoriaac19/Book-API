@@ -28,7 +28,7 @@
 }
 
 .book-name,
-.year {
+.year, .image {
   justify-content: center;
   width: 80%;
   height: 35px;
@@ -37,7 +37,7 @@
   border: 1px solid hsl(0, 0%, 71%);
 }
 
-.description {
+.description-book {
   height: 150px;
   justify-content: center;
   width: 80%;
@@ -45,6 +45,7 @@
   outline: none;
   border: 1px solid hsl(0, 0%, 71%);
 }
+
 
 .container-new-button {
   position: absolute;

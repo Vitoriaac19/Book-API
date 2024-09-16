@@ -1,0 +1,8 @@
+.book-cover-update-book {
+  justify-content: center;
+  width: 80%;
+  height: 35px;
+  padding-left: 15px;
+  outline: none;
+  border: 1px solid hsl(0, 0%, 71%);
+}
