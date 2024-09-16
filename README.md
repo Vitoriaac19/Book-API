@@ -29,18 +29,6 @@ The main components of the application include:
 - `AddBook`: Provides a form to add new books
 - `UpdateBook`: Allows updating of existing book information
 
-## Setup and Installation
-
-1. Clone the repository
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Start the development server:
-   ```
-   npm start
-   ```
-
 ## API Integration
 
 The application interacts with a backend API for CRUD operations on books. Ensure that the API endpoints are correctly configured in the fetch calls.
